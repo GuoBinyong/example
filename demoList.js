@@ -83,6 +83,15 @@ export default [
       }
     ]
   },
+  // poiMesh
+  {
+    title: "PoiMesh",
+    key: "PoiMesh",
+    children:[{
+      title: "创建PoiMesh",
+      demoLink: "./page/poiMesh/createPoiMesh.html"
+    }]
+  },
   // canvas3D
   {
     title: "空间画布",
