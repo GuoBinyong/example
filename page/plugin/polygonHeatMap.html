@@ -99,6 +99,14 @@
         heatMapPlugin.setDataPolygon('polygon', polygonHeatMapData)
 
       },
+      反向移动多边形热力图: function(){
+        const heatObj = heatMapPlugin.getById("polygon");
+        if (!heatObj) return false
+
+        heatObj.position.x -= 100;
+        heatMapPlugin.setDataPolygon('polygon', polygonHeatMapData)
+
+      },
     }
 
     for (let i in fns) gui.add(fns, i)
