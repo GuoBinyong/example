@@ -94,50 +94,6 @@
     let polygonHeatObj = null
     const gui = new GUI()
     const fns = {
-      绘制多边形热力图: async function () {
-        const res = await drawingShapePlugin.drawingLine(
-          {
-            color: 'green',
-            opacity: 0.8
-          },
-        );
-
-        console.log('drawLine done', res)
-            const { points } = res
-            points.forEach((p, index) => {
-              const i = index + 1
-              polygonHeatMapData.push({ ...p, radius: 50 * i, value: 100 * i })
-            })
-
-            window.polygonHeatObj = polygonHeatObj = heatMapPlugin.createPolygon({
-              id: 'polygon',
-              name: 'polygon_name',
-              max: 100,
-              min: 1,
-              points: points,
-              data: polygonHeatMapData
-            })
-      },
-      添加热力点: async function () {
-        const res = await drawingShapePlugin.drawingPoint(
-          {
-            color: 'blue',
-            opacity: 1
-          }
-        );
-        console.log('drawLine done', res)
-            const { position } = res
-            polygonHeatMapData.push({ ...position, radius: Math.random() * 100, value: Math.random() * 100 })
-            const heatObj = heatMapPlugin.setDataPolygon('polygon', polygonHeatMapData)
-      },
-      移动多边形热力图: function(){
-        const heatObj = heatMapPlugin.getById("polygon");
-        if (!heatObj) return false
-
-        heatObj.position.x += 100;
-        heatMapPlugin.setDataPolygon('polygon', polygonHeatMapData)
-
-      },
       重置数据: function () {
         heatMapPlugin.setData(
           'hm1',

@@ -269,6 +269,10 @@ export default [
         demoLink: "./page/plugin/heatMap.html"
       },
       {
+        title: "多边形热力图",
+        demoLink: "./page/plugin/polygonHeatMap.html"
+      },
+      {
         title: "特效",
         demoLink: "./page/plugin/effect.html"
       },
